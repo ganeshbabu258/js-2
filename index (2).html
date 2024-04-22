@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+</head>
+<body>
+
+<center>
+
+    <h1>Student Form</h1>
+
+    <form onsubmit="validateform()">
+
+        <label>Name:</label><br>
+        <input type="text" id="name">
+
+        <br><br>
+
+        <label>Roll No:</label><br>
+        <input type="number" id="rollno"><br><br>
+
+        <input type="submit">
+
+    </form>
+
+    <script>
+       
+
+        function validateform()
+
+        {
+
+            var name= document.getElementById("name").value.trim();
+            var roll= document.getElementById("rollno").value.trim();
+        
+            if(name === "");
+            {
+                alert("Please enter your name.")
+                return false;
+            }
+           
+
+            if(roll === "");
+            {
+                alert("Please enter your rollno ")
+                return false;
+            }
+
+            if (!/^[A-Za-z\s]+$/.test(name))
+            {
+            alert("Name can only contain alphabets and spaces.");
+            return false;
+            }
+    
+            if (!/^\d+$/.test(roll)) 
+            {
+            alert("Roll number must be a number.");
+            return false;
+            }
+
+
+return true;
+
+
+        }
+    </script>
+
+</center>
+    
+</body>
+</html>
